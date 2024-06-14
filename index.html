@@ -1,0 +1,95 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portal de Notícias IBGE</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Portal de Notícias IBGE</h1>
+        <form action="#" method="GET" class="formulario-busca">
+          <div class="caixa-busca">
+            <input type="text" name="busca" placeholder="Buscar Notícias por Termo...">
+            <button type="submit" class="botao-busca">&#128269;</button>
+          </div>
+        </form>
+
+
+        <button class="icon-button" onclick="openModal()">
+          <svg id="filtro-icon" width="25" height="25" fill="#f0f0f0" viewBox="0 0 80 90" focusable="false"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+          </svg>
+        </button>
+
+      </header>
+
+      <main>
+        <div id="caixa-noticias"></div>
+
+        <dialog id="modal">
+          <span id="modal-close" onclick="closeModal()">X</span>
+
+          <form id="modal-content">
+            <div>
+              <div class="modal-group">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo">
+                  <option value="selecione">Selecione</option>
+                  <option value="noticia">Notícia</option>
+                  <option value="release">Release</option>
+                </select>
+              </div>
+              <div class="modal-group">
+                <label for="quantidade">Quantidade: </label>
+                <select name="quantidade" id="quantidade">
+                  <option value="5">5</option>
+                  <option value="10" selected>10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                </select>
+              </div>
+              <div class="modal-group">
+                <label for="inicio">De: </label>
+                <input type="date" id="inicio" />
+              </div>
+              <div class="modal-group">
+                <label for="fim">Até: </label>
+                <input type="date" id="fim" />
+              </div>
+            </div>
+            <button type="submit" id="modal-submit" onclick="applyChanges()">Aplicar</button>
+          </form>
+        </dialog>
+
+        <ul id="pagination-list">
+          <li><button class="active">1</button></li>
+          <li><button class="inactive">2</button></li>
+          <li><button class="inactive">3</button></li>
+          <li><button class="inactive">4</button></li>
+          <li><button class="inactive">5</button></li>
+          <li><button class="inactive">6</button></li>
+          <li><button class="inactive">7</button></li>
+          <li><button class="inactive">8</button></li>
+          <li><button class="inactive">9</button></li>
+          <li><button class="inactive">10</button></li>
+        </ul>
+
+      </main>
+      <footer>
+        <p>&copy; Prova Segundo Bimestre - Programação Web</p>
+      </footer>
+    </div>
+
+
+    <script src="index.js"></script>
+  </body>
+
+  </html>
